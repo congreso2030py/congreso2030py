@@ -13,7 +13,7 @@
       </div>
 
       <div class="o-container o-section">
-        <h4 class="u-margin-bottom-4">Diputados/as</h4>
+        <h4 class="u-margin-bottom-4">Parlamentarias/os</h4>
         <div class="o-grid">
           <div class="o-grid__col u-12 u-4@sm">
             <tipi-text meta="" :value="this.dividedDeputies[0]" type="deputy" :source="allDeputies" hideGroup/>

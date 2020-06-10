@@ -219,11 +219,11 @@ const routes = [{
     name: "deputy",
     component: Deputy
   },
-  // {
-  //   path: "/partidos/:id",
-  //   name: "parliamentarygroup",
-  //   component: Parliamentarygroup
-  // },
+  {
+    path: "/partidos/:id",
+    name: "parliamentarygroup",
+    component: Parliamentarygroup
+  },
   {
     path: "/scanner",
     name: "scanner",
