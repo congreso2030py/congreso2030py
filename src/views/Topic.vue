@@ -3,14 +3,11 @@
     <tipi-topic-card :topic="topic" :topicsStyles="styles"/>
     <div id="topic" class="o-container o-section">
       <div class="o-grid">
-        <div class="o-grid__col u-12 u-4@sm" v-if="deputies">
-          <tipi-text meta="Diputadas/os más activas/os" :value="deputies" type="deputies" :source="deputies" />
+        <div class="o-grid__col u-12 u-6@sm" v-if="deputies">
+          <tipi-text meta="Diputadas/os más activas/os" :value="deputies" type="deputy" :source="deputies" />
         </div>
-        <div class="o-grid__col u-12 u-4@sm" v-if="parliamentarygroups">
-          <tipi-text meta="Grupos más activos" :value="parliamentarygroups" type="parliamentarygroups" :source="parliamentarygroups" />
-        </div>
-        <div class="o-grid__col u-12 u-4@sm" v-if="places">
-          <tipi-text meta="Dónde se trata más" :value="places" />
+        <div class="o-grid__col u-12 u-6@sm" v-if="parliamentarygroups">
+          <tipi-text meta="Grupos más activos" :value="parliamentarygroups" type="parliamentarygroup" :source="parliamentarygroups" />
         </div>
       </div>
       <div class="u-border-top u-padding-top-4" v-if="latestInitiatives">
@@ -73,7 +70,6 @@ export default {
           this.getLatestInitiatives(this.topic.name);
           this.getParliamentarygroupsRanking(this.topic.name);
           this.getDeputiesRanking(this.topic.name);
-          this.getPlacesRanking(this.topic.name);
           this.loaded = true;
         })
         .catch(error => {
@@ -84,20 +80,16 @@ export default {
     getDeputiesRanking: function(topic) {
       api.getDeputiesRanking(topic, null, 3)
         .then(response => {
+          let regex_id = /\[.*\]/;
           this.deputies = response;
           this.deputies.forEach((deputy, index) => {
-            let foundDeputy = this.allDeputies.find(allD => allD.name === deputy._id );
-            this.deputies[index].name = this.deputies[index]._id;
-            this.deputies[index].id = foundDeputy.id;
+            let get_id = regex_id.exec(deputy._id)
+            let id = get_id[0].replace('[', '').replace(']', '')
+            let foundDeputy = this.allDeputies.find(allD => allD.id === id );
+            this.deputies[index].name = deputy._id.replace(get_id[0], '').trim();
+            this.deputies[index].id = id;
             this.deputies[index].image = foundDeputy.image;
           });
-        })
-        .catch(error => this.errors = error);
-    },
-    getPlacesRanking: function(topic) {
-      api.getPlacesRanking(topic, null, 3)
-        .then(response => {
-          this.places = response.map(place => `${place._id}`);
         })
         .catch(error => this.errors = error);
     },
