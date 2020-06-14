@@ -35,7 +35,10 @@ export default {
     },
   ],
   LOGO: '/img/logo.png',
-
+  DISCLAIMER: {
+    'route': 'about',
+    'name': 'Inauguramos Congreso2030py en su versión beta. Descrubre qué ofrece esta versión.'
+  },
   DEFAULT_PAGE_TITLE: 'Congreso 2030 Paraguay',
   DEFAULT_METATAGS: [
     {
