@@ -44,7 +44,7 @@
             <span class="u-text-tbody2">Relación de este expediente con los ODS <sup title="El gráfico muestra los ODS relacionados con este expediente y el grado de relación con cada uno de ellos, cuya intensidad se refleja en la barra circular que los rodea."><i class="fa fa-question-circle"></i></sup></span>
           </div>
           <div class="u-border-bottom u-margin-bottom-4">
-            <tipi-text meta="Partido" :value="initiative.authors" type="parliamentarygroup" :source="allParliamentaryGroups" />
+            <tipi-text meta="Partido / Otros" :value="initiative.authors" type="parliamentarygroup" :source="allParliamentaryGroups" />
             <tipi-text meta="Parlamentaria/o" :value="initiative.deputies" type="deputy" :source="allDeputies" :hideiGroup="false" />
           </div>
         </div>
