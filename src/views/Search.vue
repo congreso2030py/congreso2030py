@@ -31,6 +31,8 @@
         :initiatives="initiatives || []"
         :topicsStyles="topicsStyles"
         :queryMeta="query_meta"
+        :metaDeputies="`Parlamentaria/o`"
+        :metaGroupsOthers="`Partido / Otros`"
         @loadMore="loadMore"
       />
     </div>
