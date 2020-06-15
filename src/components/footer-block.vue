@@ -5,10 +5,37 @@
         <div class="o-grid__col u-12@sm">
           <div class="o-container">
             <div class="o-grid">
-              <div class="o-grid__col u-3@sm text-center">
-                <a href="/"><img src="/img/logo.png" class="big" alt="Logo de Congreso 2030 Paraguay"></a>
+              <div class="o-grid__col u-3@sm">
+                <p class="u-text-overline">Impulsado por</p>
+                <img src="/img/congresopy.png" class="big" alt="Logo del Congreso de la Nación Paraguay">
               </div>
-              <div class="o-grid__col u-8@sm u-offset-1@sm u-text-tbody2">
+              <div class="o-grid__col u-3@sm u-offset-1@sm">
+                <p class="u-text-overline">Con el apoyo de</p>
+                <div class="o-grid">
+                  <div class="o-grid__col u-4@sm">
+                    <img src="/img/ue.png" class="big" alt="Logo de la Unión Europea">
+                  </div>
+                  <div class="o-grid__col u-8@sm">
+                    <img src="/img/eurosocial.png" class="big" alt="Logo de EUROSocial">
+                  </div>
+                </div>
+              </div>
+              <div class="o-grid__col u-3@sm u-offset-1@sm">
+                <p class="u-text-overline">Desarrollado por</p>
+                <div class="o-grid">
+                  <div class="o-grid__col u-8@sm">
+                    <a href="http://politicalwatch.es"><img src="/img/ciecode.png" class="big" alt="Logo de CIECODE"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="o-container u-margin-top-4">
+            <div class="o-grid">
+              <div class="o-grid__col u-12@sm text-center u-text-tbody2" style="text-align: center;">
+                Todo el código fuente está disponible en <a href="https://github.com/politicalwatch" target="_blank">GitHub</a> con licencia <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GNU/GPLv3</a>
+                <br>
+                Contacta con nosotras en <a href="mailto:congreso2030@senado.gov.py" target="_blank">congreso2030@senado.gov.py</a> · <a href="congreso2030@diputados.gov.py" target="_blank">congreso2030@diputados.gov.py</a>
               </div>
             </div>
           </div>
