@@ -18,11 +18,11 @@ export default {
     //   name: 'Métricas',
     //   condition: true,
     // },
-    {
-      route: 'scanner',
-      name: 'Scanner',
-      condition: true,
-    },
+    // {
+    //   route: 'scanner',
+    //   name: 'Scanner',
+    //   condition: true,
+    // },
     // {
     //   route: 'alerts',
     //   name: 'Alertas',
@@ -37,7 +37,7 @@ export default {
   LOGO: '/img/logo.png',
   DISCLAIMER: {
     'route': 'about',
-    'name': 'Inauguramos Congreso2030py en su versión beta. Descrubre qué ofrece esta versión.'
+    'name': 'Descubre las funcionalidades y datos de la versión beta de Congreso2030py'
   },
   DEFAULT_PAGE_TITLE: 'Congreso 2030 Paraguay',
   DEFAULT_METATAGS: [
