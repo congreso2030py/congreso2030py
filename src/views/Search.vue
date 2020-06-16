@@ -8,7 +8,7 @@
 
     <div id="search" class="o-container o-section u-margin-bottom-10">
 
-      <tipi-header :title="'Buscar'" :subtitle="'Bucea en la actividad parlamentaria relacionada con los ODS con las múltiples opciones que te ofrece el buscador de Congreso 2030'" />
+      <tipi-header :title="'Buscar'" :subtitle="'Navega en la actividad legislativa relacionada a los ODS con las múltiples opciones que te ofrece el buscador de Congreso 2030'" />
 
       <search-form :formData="this.data" @getResults="getResults" />
 
@@ -33,6 +33,7 @@
         :queryMeta="query_meta"
         :metaDeputies="`Parlamentaria/o`"
         :metaGroupsOthers="`Partido / Otros`"
+        :colors="colors"
         @loadMore="loadMore"
       />
     </div>
@@ -83,6 +84,7 @@ export default {
       csvItems: [],
       LIMITCSV: 1000,
       topicsStyles: config.STYLES.topics,
+      colors: config.COLORIZEDSTATUS,
       scrollToID: '#results'
     }
   },

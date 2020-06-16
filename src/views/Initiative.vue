@@ -36,7 +36,7 @@
         </div>
         <div class="o-grid__col u-12 u-3@md">
           <div class="u-padding-bottom-4 u-border-bottom u-margin-bottom-4">
-            <tipi-initiative-meta :initiative="initiative" link-text="Ver en SILpy" />
+            <tipi-initiative-meta :initiative="initiative" link-text="Ver en SILpy" :colors="colors" />
           </div>
 
           <div class="u-padding-bottom-4 u-border-bottom u-margin-bottom-4">
@@ -93,6 +93,7 @@ export default {
       initiative: {},
       moment: moment,
       styles: config.STYLES,
+      colors: config.COLORIZEDSTATUS,
       loaded: false,
     }
   },

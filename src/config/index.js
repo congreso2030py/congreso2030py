@@ -206,4 +206,9 @@ export default {
     defaultColor: "#cecece",
     defaultImage: "placeholder.png",
   },
+  COLORIZEDSTATUS: {
+    'completed': ['ARCHIVADO', 'PUBLICADO', 'CONTESTADO', 'CONTESTADO PARCIALMENTE'],
+    'neutral': ['EN TRAMITE', 'COMUNICADO'],
+    'error': ['RETIRADO', 'NO CONTESTADO', 'SUSPENDIDO POR FALTA DE TRAMITE'],
+  },
 }
