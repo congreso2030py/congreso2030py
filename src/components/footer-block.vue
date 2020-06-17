@@ -8,16 +8,9 @@
             <p class="u-text-overline">Impulsado por</p>
             <img src="/img/congresopy.png" class="big" alt="Logo del Congreso de la Nación Paraguay">
           </div>
-          <div class="o-grid__col u-3@sm u-offset-1@sm u-margin-top-4">
+          <div class="o-grid__col u-4@sm u-offset-1@sm u-margin-top-4">
             <p class="u-text-overline">Con el apoyo de</p>
-            <div class="o-grid">
-              <div class="o-grid__col u-4@xs">
-                <img src="/img/ue.png" class="big" alt="Logo de la Unión Europea">
-              </div>
-              <div class="o-grid__col u-8@xs">
-                <img src="/img/eurosocial.png" class="big" alt="Logo de EUROSocial">
-              </div>
-            </div>
+            <img src="/img/ue-eurosocial.png" class="big" alt="Logo de la Unión Europea y Eurosocial">
           </div>
           <div class="o-grid__col u-3@sm u-offset-1@sm u-margin-top-4">
             <p class="u-text-overline">Desarrollado por</p>
