@@ -18,11 +18,11 @@ export default {
     //   name: 'Métricas',
     //   condition: true,
     // },
-    // {
-    //   route: 'scanner',
-    //   name: 'Scanner',
-    //   condition: true,
-    // },
+    {
+      route: 'scanner',
+      name: 'Scanner',
+      condition: true,
+    },
     // {
     //   route: 'alerts',
     //   name: 'Alertas',

@@ -224,11 +224,11 @@ const routes = [{
     name: "parliamentarygroup",
     component: Parliamentarygroup
   },
-  // {
-  //   path: "/scanner",
-  //   name: "scanner",
-  //   component: Scanner
-  // },
+  {
+    path: "/scanner",
+    name: "scanner",
+    component: Scanner
+  },
   {
     path: "/acerca",
     name: "about",
