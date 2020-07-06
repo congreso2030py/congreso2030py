@@ -33,7 +33,7 @@
         :queryMeta="query_meta"
         :metaDeputies="`Parlamentaria/o`"
         :metaGroupsOthers="`Partido / Otros`"
-        :colors="colors"
+        :metaColors="metaColors"
         @loadMore="loadMore"
       />
     </div>
@@ -84,7 +84,7 @@ export default {
       csvItems: [],
       LIMITCSV: 1000,
       topicsStyles: config.STYLES.topics,
-      colors: config.COLORIZEDSTATUS,
+      metaColors: config.COLORIZEDSTATUS,
       scrollToID: '#results'
     }
   },

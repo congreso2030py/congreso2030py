@@ -24,13 +24,13 @@ const state = {
 
 const getters = {
   allDeputiesName(state) {
-    return state.allDeputies.map(deputy => deputy.name)
+    return state.allDeputies.map(deputy => deputy.name + " ["+ deputy.id +"]")
   },
   allPlacesName(state) {
     return state.allPlaces.map(place => place.name)
   },
-  allParliamentaryGroupsWithGoverment(state) {
-    return ['Gobierno'].concat(state.allParliamentaryGroups)
+  allParliamentaryGroupsName(state) {
+    return state.allParliamentaryGroups.map(group => group.name)
   },
   getDeputyByName(state) {
     return name => state.allDeputies.find(deputy =>{

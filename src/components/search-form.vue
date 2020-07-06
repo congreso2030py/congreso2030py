@@ -53,130 +53,130 @@
         </multiselect>
         </div>
       </div>
-      <!-- <div class="o&#45;grid__col u&#45;12 u&#45;6@sm u&#45;padding&#45;bottom&#45;4"> -->
-      <!--   <div class="c&#45;select&#45;label u&#45;block"> -->
-      <!--     <label for="author">Autor</label> -->
-      <!--     <multiselect -->
-      <!--       selectedLabel="Seleccionado" -->
-      <!--       selectLabel="" -->
-      <!--       deselectLabel="Pulsa para deseleccionar" -->
-      <!--       v&#45;model="form.author" -->
-      <!--       :options="groups.map(group => group.name || group)" -->
-      <!--       :allow&#45;empty="true" -->
-      <!--       name="author" id="author" placeholder="Todos"> -->
-      <!--     </multiselect> -->
-      <!--   </div> -->
-      <!--   <router&#45;link -->
-      <!--     class="u&#45;text&#45;tbody2" -->
-      <!--     v&#45;if="getParliamentaryGroupByName(form.author)" -->
-      <!--     :to="{ path: `/parliamentarygroups/${getParliamentaryGroupByName(form.author).id}` }"> -->
-      <!--     ¿Quieres ver el perfil del {{ form.author }}? -->
-      <!--   </router&#45;link> -->
-      <!-- </div> -->
-      <!-- <div class="o&#45;grid__col u&#45;12 u&#45;6@sm u&#45;padding&#45;bottom&#45;4"> -->
-      <!--   <div class="c&#45;select&#45;label u&#45;block"> -->
-      <!--     <label for="author_deputies">Diputado/a</label> -->
-      <!--     <multiselect -->
-      <!--       selectedLabel="Seleccionado" -->
-      <!--       selectLabel="" -->
-      <!--       deselectLabel="Pulsa para deseleccionar" -->
-      <!--       v&#45;model="form.deputy" -->
-      <!--       :options="deputies" -->
-      <!--       :allow&#45;empty="true" -->
-      <!--       name="deputy" id="deputy" placeholder="Apellidos, Nombre"> -->
-      <!--     </multiselect> -->
-      <!--   </div> -->
-      <!--   <router&#45;link -->
-      <!--     class="u&#45;text&#45;tbody2" -->
-      <!--     v&#45;if="getDeputyByName(form.deputy)" -->
-      <!--     :to="{ path: `/deputies/${getDeputyByName(form.deputy).id}` }"> -->
-      <!--     ¿Quieres ver el perfil de {{ form.deputy }}? -->
-      <!--   </router&#45;link> -->
-      <!-- </div> -->
+      <div class="o-grid__col u-12 u-6@sm u-padding-bottom-4">
+        <div class="c-select-label u-block">
+          <label for="author">Partido</label>
+          <multiselect
+            selectedLabel="Seleccionado"
+            selectLabel=""
+            deselectLabel="Pulsa para deseleccionar"
+            v-model="form.author"
+            :options="groups.map(group => group.name || group)"
+            :allow-empty="true"
+            name="author" id="author" placeholder="Todos">
+          </multiselect>
+        </div>
+        <router-link
+          class="u-text-tbody2"
+          v-if="getParliamentaryGroupByName(form.author)"
+          :to="{ name: 'parliamentarygroup', params: {id: getParliamentaryGroupByName(form.author).id }}">
+          ¿Quieres ver el perfil del {{ form.author }}?
+        </router-link>
+      </div>
+      <div class="o-grid__col u-12 u-6@sm u-padding-bottom-4">
+        <div class="c-select-label u-block">
+          <label for="author_deputies">Parlamentaia/o</label>
+          <multiselect
+            selectedLabel="Seleccionado"
+            selectLabel=""
+            deselectLabel="Pulsa para deseleccionar"
+            v-model="form.deputy"
+            :options="deputies"
+            :allow-empty="true"
+            name="deputy" id="deputy" placeholder="Apellidos, Nombre">
+          </multiselect>
+        </div>
+        <router-link
+          class="u-text-tbody2"
+          v-if="form.deputy"
+          :to="{ name: 'deputy', params: {id: getIdFromDeputy(form.deputy) }}">
+          ¿Quieres ver el perfil de {{ form.deputy }}?
+        </router-link>
+      </div>
     </div> <!-- /.o-grid -->
     <div class="o-grid" v-show="advanced">
-      <!-- <div class="o&#45;grid__col u&#45;12 u&#45;4@sm u&#45;padding&#45;bottom&#45;4"> -->
-      <!--   <div class="c&#45;datepicker&#45;label u&#45;block"> -->
-      <!--     <label for="startdate">Desde</label> -->
-      <!--     <datepicker -->
-      <!--       v&#45;model="form.startdate" -->
-      <!--       @cleared="clearStartDate" -->
-      <!--       placeholder="dd/mm/YYYY" format="dd/MM/yyyy" name="startdate"> -->
-      <!--     </datepicker> -->
-      <!--   </div> -->
-      <!-- </div> -->
-      <!-- <div class="o&#45;grid__col u&#45;12 u&#45;4@sm u&#45;padding&#45;bottom&#45;4"> -->
-      <!--   <div class="c&#45;datepicker&#45;label u&#45;block"> -->
-      <!--     <label for="enddate">Hasta</label> -->
-      <!--     <datepicker -->
-      <!--       v&#45;model="form.enddate" -->
-      <!--       @cleared="clearEndDate" -->
-      <!--       placeholder="dd/mm/YYYY" format="dd/MM/yyyy" name="enddate"> -->
-      <!--     </datepicker> -->
-      <!--   </div> -->
-      <!-- </div> -->
-      <!-- <div class="o&#45;grid__col u&#45;12 u&#45;4@sm u&#45;padding&#45;bottom&#45;4"> -->
-      <!--   <div class="c&#45;select&#45;label u&#45;block"> -->
-      <!--     <label for="status">Estado</label> -->
-      <!--     <multiselect -->
-      <!--       selectedLabel="Seleccionado" -->
-      <!--       selectLabel="" -->
-      <!--       deselectLabel="Pulsa para deseleccionar" -->
-      <!--       v&#45;model="form.status" -->
-      <!--       :options="status" -->
-      <!--       :allow&#45;empty="true" -->
-      <!--       name="status" id="status" placeholder="Cualquiera"> -->
-      <!--     </multiselect> -->
-      <!--   </div> -->
-      <!-- </div> -->
-      <!-- <div class="o&#45;grid__col u&#45;12 u&#45;6@sm u&#45;padding&#45;bottom&#45;4"> -->
-      <!--   <div class="c&#45;select&#45;label u&#45;block"> -->
-      <!--     <label for="place">Lugar</label> -->
-      <!--     <multiselect -->
-      <!--       selectedLabel="Seleccionado" -->
-      <!--       selectLabel="" -->
-      <!--       deselectLabel="Pulsa para deseleccionar" -->
-      <!--       v&#45;model="form.place" -->
-      <!--       :options="places" -->
-      <!--       :allow&#45;empty="true" -->
-      <!--       name="place" id="place" placeholder="Cualquiera"> -->
-      <!--     </multiselect> -->
-      <!--   </div> -->
-      <!-- </div> -->
-      <!-- <div class="o&#45;grid__col u&#45;12 u&#45;6@sm u&#45;padding&#45;bottom&#45;4"> -->
-      <!--   <div class="c&#45;select&#45;label u&#45;block"> -->
-      <!--     <label for="type">Tipo</label> -->
-      <!--     <multiselect -->
-      <!--       selectedLabel="Seleccionado" -->
-      <!--       selectLabel="" -->
-      <!--       deselectLabel="Pulsa para deseleccionar" -->
-      <!--       v&#45;model="form.type" -->
-      <!--       :options="types" -->
-      <!--       :allow&#45;empty="true" -->
-      <!--       name="type" id="type" placeholder="Cualquiera"> -->
-      <!--     </multiselect> -->
-      <!--   </div> -->
-      <!-- </div> -->
-      <!-- <div class="o&#45;grid__col u&#45;12 u&#45;6@sm u&#45;padding&#45;bottom&#45;4"> -->
-      <!--   <div class="c&#45;input&#45;label u&#45;block"> -->
-      <!--     <label for="reference">Referencia</label> -->
-      <!--     <input v&#45;model="form.reference" type="text" id="reference" name="reference" placeholder="Ej.: 121/000001"> -->
-      <!--   </div> -->
-      <!-- </div> -->
-      <!-- <div class="o&#45;grid__col u&#45;12 u&#45;6@sm u&#45;padding&#45;bottom&#45;4"> -->
-      <!--   <div class="c&#45;input&#45;label u&#45;block"> -->
-      <!--     <label for="title">Título</label> -->
-      <!--     <input v&#45;model="form.title" type="text" id="title" name="title" placeholder="Nota: Se admiten expresiones regulares"> -->
-      <!--   </div> -->
-      <!-- </div> -->
+      <div class="o-grid__col u-12 u-4@sm u-padding-bottom-4">
+        <div class="c-datepicker-label u-block">
+          <label for="startdate">Desde</label>
+          <datepicker
+            v-model="form.startdate"
+            @cleared="clearStartDate"
+            placeholder="dd/mm/YYYY" format="dd/MM/yyyy" name="startdate">
+          </datepicker>
+        </div>
+      </div>
+      <div class="o-grid__col u-12 u-4@sm u-padding-bottom-4">
+        <div class="c-datepicker-label u-block">
+          <label for="enddate">Hasta</label>
+          <datepicker
+            v-model="form.enddate"
+            @cleared="clearEndDate"
+            placeholder="dd/mm/YYYY" format="dd/MM/yyyy" name="enddate">
+          </datepicker>
+        </div>
+      </div>
+      <div class="o-grid__col u-12 u-4@sm u-padding-bottom-4">
+        <div class="c-select-label u-block">
+          <label for="status">Estado</label>
+          <multiselect
+            selectedLabel="Seleccionado"
+            selectLabel=""
+            deselectLabel="Pulsa para deseleccionar"
+            v-model="form.status"
+            :options="status"
+            :allow-empty="true"
+            name="status" id="status" placeholder="Cualquiera">
+          </multiselect>
+        </div>
+      </div>
+      <div class="o-grid__col u-12 u-6@sm u-padding-bottom-4">
+        <div class="c-select-label u-block">
+          <label for="place">Lugar</label>
+          <multiselect
+            selectedLabel="Seleccionado"
+            selectLabel=""
+            deselectLabel="Pulsa para deseleccionar"
+            v-model="form.place"
+            :options="places"
+            :allow-empty="true"
+            name="place" id="place" placeholder="Cualquiera">
+          </multiselect>
+        </div>
+      </div>
+      <div class="o-grid__col u-12 u-6@sm u-padding-bottom-4">
+        <div class="c-select-label u-block">
+          <label for="type">Tipo</label>
+          <multiselect
+            selectedLabel="Seleccionado"
+            selectLabel=""
+            deselectLabel="Pulsa para deseleccionar"
+            v-model="form.type"
+            :options="types"
+            :allow-empty="true"
+            name="type" id="type" placeholder="Cualquiera">
+          </multiselect>
+        </div>
+      </div>
+      <div class="o-grid__col u-12 u-6@sm u-padding-bottom-4">
+        <div class="c-input-label u-block">
+          <label for="reference">Referencia</label>
+          <input v-model="form.reference" type="text" id="reference" name="reference" placeholder="Ej.: D-2056592">
+        </div>
+      </div>
+      <div class="o-grid__col u-12 u-6@sm u-padding-bottom-4">
+        <div class="c-input-label u-block">
+          <label for="title">Acápite</label>
+          <input v-model="form.title" type="text" id="title" name="title" placeholder="Nota: Se admiten expresiones regulares">
+        </div>
+      </div>
     </div> <!-- /.o-grid -->
     <div class="o-grid">
       <div class="o-grid__col u-12 u-6@sm u-padding-bottom-4">
-        <!-- <a href="#" class="c&#45;button u&#45;padding&#45;left&#45;0" @click.prevent="toggleAdvanced"> -->
-        <!--   <tipi&#45;icon icon="advanced" /> -->
-        <!--   <span v&#45;if="!advanced">Mostrar búsqueda avanzada</span> -->
-        <!--   <span v&#45;else>Ocultar búsqueda avanzada</span> -->
-        <!-- </a> -->
+        <a href="#" class="c-button u-padding-left-0" @click.prevent="toggleAdvanced">
+          <tipi-icon icon="advanced" />
+          <span v-if="!advanced">Mostrar búsqueda avanzada</span>
+          <span v-else>Ocultar búsqueda avanzada</span>
+        </a>
       </div>
       <div class="o-grid__col u-12 u-6@sm u-padding-bottom-4 u-text-right@sm">
         <button class="c-button u-padding-left-0 u-margin-right-2" @click.prevent="cleanForm">Limpiar búsqueda</button>
@@ -223,7 +223,7 @@ export default {
     ...mapGetters({
       deputies: 'allDeputiesName',
       places: 'allPlacesName',
-      groups: 'allParliamentaryGroupsWithGoverment',
+      groups: 'allParliamentaryGroupsName',
       getDeputyByName: 'getDeputyByName',
       getParliamentaryGroupByName: 'getParliamentaryGroupByName',
     }),
@@ -294,6 +294,9 @@ export default {
       this.form.tags = [];
       this.selectedSubtopics.splice(this.selectedSubtopics.indexOf(removedSubtopic), 1);
       this.filterTags();
+    },
+    getIdFromDeputy(deputyName) {
+      return /\[.*\]/.exec(deputyName)[0].replace('[', '').replace(']', '');
     },
     getResults: function(event) {
       this.form.enddate = this.form.enddate ? moment(this.form.enddate).format('YYYY-MM-DD') : undefined;
