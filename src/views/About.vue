@@ -5,15 +5,6 @@
         <div class="o-grid">
           <div class="o-grid__col u-8@sm u-offset-2@sm">
 
-            <tipi-message icon type="info">
-              La <strong>versión beta</strong> incluye:
-              <br>
-              <ul>
-                <li>Toda la actividad parlamentaria del último periodo legislativo (desde junio 2019 hasta hoy).</li>
-                <li>La versión final de la herramienta estará lista con toda la información legislativa a principios de julio 2020.</li>
-              </ul>
-            </tipi-message>
-
             <p><strong>Congreso2030py</strong> es una innovadora herramienta que rastrea, reúne y ofrece la información sobre la actividad del Congreso Nacional de la República del Paraguay relacionada con los Objetivos de Desarrollo Sostenible. Fue desarrollada para superar los retos que plantea la naturaleza transversal de la Agenda 2030, Congreso 2030Py clasifica la información relacionada con los ODS gracias a un avanzado sistema automático de etiquetado masivo. Esta innovadora tecnología permite a los usuarios navegar por la actividad parlamentaria relacionada con los ODS a través de un buscador online, abierto y gratuito. La información ofrecida es esencial de cara a la monitorización y la rendición de cuentas de la implementación de la Agenda 2030 a nivel nacional.</p>
             <p>La iniciativa ha sido liderada por la Cámara de Senadores del Congreso de Paraguay como parte del Plan de Acción de Parlamento Abierto 2018 – 2020 contraído en el marco de la Asociación de Gobierno Abierto (AGA).</p>
             <p>Ha contado con el apoyo técnico y financiero del Programa de cooperación de la Unión Europea con América Latina, EUROsociAL+, a través de su área de Gobernanza Democrática que coordina la FIIAPP.</p>
