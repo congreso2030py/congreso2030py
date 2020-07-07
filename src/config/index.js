@@ -13,21 +13,16 @@ export default {
       name: 'ODS',
       condition: true,
     },
-    // {
-    //   route: 'dashboard',
-    //   name: 'Métricas',
-    //   condition: true,
-    // },
+    {
+      route: 'dashboard',
+      name: 'Métricas',
+      condition: true,
+    },
     {
       route: 'scanner',
       name: 'Scanner',
       condition: true,
     },
-    // {
-    //   route: 'alerts',
-    //   name: 'Alertas',
-    //   condition: false,
-    // },
     {
       route: 'about',
       name: 'Acerca',

@@ -80,11 +80,11 @@ const routes = [{
       ]
     }
   },
-  // {
-  //   path: "/dashboard",
-  //   name: "dashboard",
-  //   component: Dashboard
-  // },
+  {
+    path: "/dashboard",
+    name: "dashboard",
+    component: Dashboard
+  },
   {
     path: "/ods",
     name: "ods",
@@ -234,11 +234,6 @@ const routes = [{
     name: "about",
     component: About
   },
-  // {
-  //   path: "/alerts",
-  //   name: "alerts",
-  //   component: Alerts
-  // },
   {
     path: "/*",
     name: "Page404",

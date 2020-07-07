@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="dashboard" class="o-container o-section u-margin-bottom-10">
-      <tipi-header :title="'Métricas'" :subtitle="'Elige un Objetivo de Desarrollo Sostenible o profundiza en sus Metas y descubre cuánto de la Agenda 2030 se está tratando en el Congreso de los Diputados'"/>
+      <tipi-header :title="'Métricas'" :subtitle="'Elige un Objetivo de Desarrollo Sostenible o profundiza en sus Metas y descubre cuánto de la Agenda 2030 se está tratando en el Congreso'"/>
       <div class="o-grid u-margin-bottom-4">
         <div class="o-grid__col u-12">
           <form @submit.prevent="getResults">
@@ -50,14 +50,28 @@
       </div>
       <div class="o-grid u-margin-bottom-4" v-show="data.selection.selected.initiatives">
         <div class="o-grid__col u-12">
-          <div class="o-grid">
-            <div class="o-grid__col u-6@sm" v-if="data.parliamentarygroups && data.parliamentarygroups.length">
-              <tipi-message type="info" v-if="data.isSelected" icon>Ránking de los grupos que más expedientes presentan relacionadas con <strong>{{data.selection.selected._id}}</strong></tipi-message>
-              <tipi-text meta="Partidos más activos" :value="data.parliamentarygroups.map(group => `${group._id} (${group.initiatives} ${pluralizeInitiatives(group.initiatives)})`)" type="parliamentarygroup" :source="allParliamentaryGroups"/>
+          <div class="o-grid u-margin-top-4" v-if="data.deputies && data.deputies.length">
+            <div class="o-grid__col u-6@sm">
+              <tipi-message type="info" v-if="data.isSelected" icon>Ránking de las/os parlamentarias/os que más expedientes presentan relacionadas con <strong>{{data.selection.selected._id}}</strong></tipi-message>
             </div>
-            <div class="o-grid__col u-6@sm" v-if="data.places && data.places.length">
+            <div class="o-grid__col u-6@sm">
+              <tipi-text meta="" :value="data.deputies.map(group => `${group._id} (${group.initiatives} ${pluralizeInitiatives(group.initiatives)})`)" type="deputy" :source="allDeputies"/>
+            </div>
+          </div>
+          <div class="o-grid u-margin-top-4" v-if="data.parliamentarygroups && data.parliamentarygroups.length">
+            <div class="o-grid__col u-6@sm">
+              <tipi-message type="info" v-if="data.isSelected" icon>Ránking de los partidos que más expedientes presentan relacionadas con <strong>{{data.selection.selected._id}}</strong></tipi-message>
+            </div>
+            <div class="o-grid__col u-6@sm">
+              <tipi-text meta="" :value="data.parliamentarygroups.map(group => `${group._id} (${group.initiatives} ${pluralizeInitiatives(group.initiatives)})`)" type="parliamentarygroup" :source="allParliamentaryGroups"/>
+            </div>
+          </div>
+          <div class="o-grid u-margin-top-4" v-if="data.places && data.places.length">
+            <div class="o-grid__col u-6@sm">
               <tipi-message type="info" v-if="data.isSelected" icon>Descubre cuáles son los lugares más habituales en los que se tramitan los expedientes relacionadas con <strong>{{data.selection.selected._id}}</strong></tipi-message>
-              <tipi-text meta="¿Dónde se tramitan los expedientes?" :value="data.places.map(place => `${place._id} (${place.initiatives} ${pluralizeInitiatives(place.initiatives)})`)" />
+            </div>
+            <div class="o-grid__col u-6@sm">
+              <tipi-text meta="" :value="data.places.map(place => `${place._id} (${place.initiatives} ${pluralizeInitiatives(place.initiatives)})`)" />
             </div>
           </div>
         </div>
@@ -102,6 +116,7 @@ export default {
             initiatives: 0
           }
         },
+        deputies: null,
         parliamentarygroups: null,
         places: null,
         styles: config.STYLES,
@@ -111,7 +126,6 @@ export default {
   },
   computed: {
     ...mapState({
-        allParliamentaryGroups: 'allParliamentaryGroups',
         topics: 'allTopics',
       }),
   },
@@ -156,6 +170,11 @@ export default {
             this.data.selectedTarget = false;
           }
           this.data.sameSelection = (this.data.selection.selected._id == this.data.selection.compareswith._id) ? true : false;
+        })
+        .catch(error => this.errors = error);
+      api.getDeputiesRanking(this.data.topic, this.data.subtopic)
+        .then(ranking => {
+          this.data.deputies = ranking;
         })
         .catch(error => this.errors = error);
       api.getParliamentarygroupsRanking(this.data.topic, this.data.subtopic)
