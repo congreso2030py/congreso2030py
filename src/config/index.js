@@ -31,8 +31,8 @@ export default {
   ],
   LOGO: '/img/logo.png',
   DISCLAIMER: {
-    'route': 'about',
-    'name': 'Descubre las funcionalidades y datos de la versión beta de Congreso2030py'
+    'route': '',
+    'name': ''
   },
   DEFAULT_PAGE_TITLE: 'Congreso 2030 Paraguay',
   DEFAULT_METATAGS: [
