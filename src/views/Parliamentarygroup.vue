@@ -57,7 +57,7 @@ export default {
     ...mapGetters(['getDeputiesByParliamentaryGroup']),
     deputies: function () {
       if (this.parliamentarygroup) {
-        return this.getDeputiesByParliamentaryGroup(this.parliamentarygroup.shortname).filter(deputy => deputy.active).map(deputy => deputy.name);
+        return this.getDeputiesByParliamentaryGroup(this.parliamentarygroup.shortname).map(deputy => deputy.name);
       }
       return [];
     },
