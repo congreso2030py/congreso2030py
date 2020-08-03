@@ -31,7 +31,7 @@
         :initiatives="initiatives || []"
         :topicsStyles="topicsStyles"
         :queryMeta="query_meta"
-        :metaDeputies="`Parlamentaria/o`"
+        :metaDeputies="`Legislador/a`"
         :metaGroupsOthers="`Partido / Otros`"
         :metaColors="metaColors"
         @loadMore="loadMore"

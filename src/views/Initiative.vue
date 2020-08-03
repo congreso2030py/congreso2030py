@@ -45,7 +45,7 @@
           </div>
           <div class="u-border-bottom u-margin-bottom-4">
             <tipi-text meta="Partido / Otros" :value="initiative.authors" type="parliamentarygroup" :source="allParliamentaryGroups" />
-            <tipi-text meta="Parlamentaria/o" :value="initiative.deputies" type="deputy" :source="allDeputies" :hideiGroup="false" />
+            <tipi-text meta="Legislador/a" :value="initiative.deputies" type="deputy" :source="allDeputies" :hideiGroup="false" />
           </div>
         </div>
       </div>

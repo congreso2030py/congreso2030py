@@ -4,7 +4,7 @@
     <div id="topic" class="o-container o-section">
       <div class="o-grid">
         <div class="o-grid__col u-12 u-6@sm" v-if="deputies">
-          <tipi-text meta="Parlamentarias/os más activas/os" :value="deputies" type="deputy" :source="deputies" />
+          <tipi-text meta="Legisladores/as más activas/os" :value="deputies" type="deputy" :source="deputies" />
         </div>
         <div class="o-grid__col u-12 u-6@sm" v-if="parliamentarygroups">
           <tipi-text meta="Partidos más activos" :value="parliamentarygroups" type="parliamentarygroup" :source="parliamentarygroups" />

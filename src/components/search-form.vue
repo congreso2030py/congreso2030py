@@ -75,7 +75,7 @@
       </div>
       <div class="o-grid__col u-12 u-6@sm u-padding-bottom-4">
         <div class="c-select-label u-block">
-          <label for="author_deputies">Parlamentaia/o</label>
+          <label for="author_deputies">Legislador/a</label>
           <multiselect
             selectedLabel="Seleccionado"
             selectLabel=""
