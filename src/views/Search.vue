@@ -3,7 +3,7 @@
 
     <tipi-splash>
       <img src="/img/logo.png">
-      <p><strong>Congreso 2030 (*beta)</strong> te ofrece la información legislativa relacionada con los Objetivos de Desarrollo Sostenible (ODS). Entra y descubre las iniciativas legislativas que contribuirán a lograr el cumplimiento de la Agenda 2030.</p>
+      <p><strong>Congreso2030py</strong> te ofrece la información legislativa relacionada con los Objetivos de Desarrollo Sostenible (ODS). Entra y descubre las iniciativas legislativas que contribuirán a lograr el cumplimiento de la Agenda 2030.</p>
     </tipi-splash>
 
     <div id="search" class="o-container o-section u-margin-bottom-10">
