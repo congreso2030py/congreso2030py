@@ -35,7 +35,11 @@
                 <tipi-text meta="Registro" :value="moment(initiative.created).format('DD/MM/Y')" />
               </div>
             </div>
+
             <tipi-topics class="u-hide u-block@md" meta="ODS tratados" :topics="initiative.topics" :tags="initiative.tags" :topicsStyles="styles.topics" />
+              <tipi-message type="info" icon class="u-hide u-block@md">
+                Análisis realizado con el texto de la {{initiative.extra.content_reference}} ({{content_files}})
+              </tipi-message>
 
             <div class="o-grid u-margin-top-4 u-padding-top-4 u-border-top u-hide u-block@md" v-if="initiative.related && initiative.related.length">
               <div class="o-grid__col o-grid__col--fill">
@@ -61,6 +65,9 @@
         </div>
         <div class="u-hide@md">
           <tipi-topics meta="ODS tratados" :topics="initiative.topics" :tags="initiative.tags" :topicsStyles="styles.topics" />
+            <tipi-message type="info" icon>
+              Análisis realizado con el texto de la {{initiative.extra.content_reference}} ({{content_files}})
+            </tipi-message>
 
           <div class="u-margin-top-4 u-padding-top-4 u-border-top" v-if="initiative.related && initiative.related.length">
             <h4 id="related" class="u-margin-bottom-4">Expedientes relacionadas</h4>
@@ -77,7 +84,7 @@
 
 <script>
 
-import { TipiHeader, TipiText, TipiTopics, TipiInitiativeMeta, TipiNeuron, TipiTopicPill, TipiResults, TipiLoader } from 'tipi-uikit'
+import { TipiHeader, TipiText, TipiTopics, TipiMessage, TipiInitiativeMeta, TipiNeuron, TipiTopicPill, TipiResults, TipiLoader } from 'tipi-uikit'
 import api from '@/api';
 import config from '@/config';
 import { mapState } from 'vuex';
@@ -92,6 +99,7 @@ export default {
     TipiHeader,
     TipiText,
     TipiTopics,
+    TipiMessage,
     TipiInitiativeMeta,
     TipiNeuron,
     TipiTopicPill,
@@ -113,6 +121,10 @@ export default {
     dataLoaded: function() {
       return (Object.keys(this.initiative).length && this.allTopics.length > 0);
     },
+    content_files: function() {
+      let pluralizeFiles = (this.initiative.extra.content_counter == 1) ? "fichero" : "ficheros";
+      return this.initiative.extra.content_counter + " " + pluralizeFiles;
+    }
   },
   methods: {
     getInitiative: function() {
@@ -127,7 +139,7 @@ export default {
           this.loaded = true;
           // this.$router.push({name: 'InitiativeNotFound', params: { id: this.$route.params.id}});
         });
-    },
+    }
   },
   created: function() {
     this.getInitiative();
