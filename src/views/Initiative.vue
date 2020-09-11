@@ -137,7 +137,6 @@ export default {
         .catch(error => {
           this.errors = error;
           this.loaded = true;
-          // this.$router.push({name: 'InitiativeNotFound', params: { id: this.$route.params.id}});
         });
     }
   },
