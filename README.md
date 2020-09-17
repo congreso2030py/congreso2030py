@@ -8,7 +8,7 @@ NodeJS > 10.0
 ## Setup
 
 ```
-git clone https://github.com/politicalwatch/congreso2030py.es.git
+git clone https://github.com/congreso2030py/congreso2030py.es.git
 cd congreso2030py
 npm install
 cp src/config/index.js.example src/config/index.js
