@@ -16,7 +16,7 @@
             <p class="u-text-overline">Desarrollado por</p>
             <div class="o-grid">
               <div class="o-grid__col u-8@xs">
-                <a href="http://politicalwatch.es"><img src="/img/ciecode.png" class="big" alt="Logo de CIECODE"></a>
+                <a href="http://politicalwatch.es"><img src="/img/politicalwatch.png" class="big" alt="Logo de Political Watch"></a>
               </div>
             </div>
           </div>
