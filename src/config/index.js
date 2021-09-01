@@ -24,6 +24,13 @@ export default {
       condition: true,
     },
     {
+      route: 'http://www.senado.gov.py/index.php/menu-contenido/listado-de-categoria-contenido/37-pggn/223-informe-de-tablero-de-control/?id_cat=475',
+      name: 'Tablero de control',
+      condition: true,
+      icon: 'open-blank',
+      external: true
+    },
+    {
       route: 'about',
       name: 'Acerca',
       condition: true,
